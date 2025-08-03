@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการสินค้า</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/admin.css">
+
+</head>
+
+<body>
+    <!-- ฟอร์มเพิ่ม/แก้ไขสินค้า -->
+    <div id="productForm" class="product-form ">
+        <h2 class="form-title" id="formTitle">เพิ่มสินค้าใหม่</h2>
+        <div class="form-grid">
+            <div>
+                <label class="form-label">ชื่อสินค้า</label>
+                <input type="text" id="productName" class="form-input" required />
+            </div>
+            <div>
+                <label class="form-label">หมวดหมู่</label>
+                <select id="productCategory" class="form-input">
+                    <option value="เสื้อ">เสื้อ</option>
+                    <option value="กระเป๋า">กระเป๋า</option>
+                    <option value="แก้ว">แก้ว</option>
+                    <option value="หมวก">หมวก</option>
+                    <option value="ร่ม">ร่ม</option>
+                    <option value="เข็มกลัด">เข็มกลัด</option>
+                    <option value="สมุด">สมุด</option>
+                    <option value="ปากกา">ปากกา</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">สี</label>
+                <input type="text" id="productColor" class="form-input" required />
+            </div>
+            <div>
+                <label class="form-label">ขนาด</label>
+                <input type="text" id="productPrice" class="form-input" required />
+
+            </div>
+            <div>
+                <label class="form-label">ราคา (บาท)</label>
+                <input type="number" id="productPrice" class="form-input" min="0" required />
+            </div>
+            <div>
+                <label class="form-label">จำนวนในสต็อก</label>
+                <input type="number" id="productStock" class="form-input" min="0" required />
+            </div>
+            <div class="full-width">
+                <label class="form-label">URL รูปภาพ</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <div class="form-actions">
+                <button onclick="saveProduct()" class="form-button save">
+                    <span id="saveButtonText">เพิ่มสินค้า</span>
+                </button>
+                <button onclick="cancelForm()" class="form-button cancel">ยกเลิก</button>
+            
+            </div>
+        </div>
+    </div>
+    <script src="/admin.js"></script>
+
+</body>
+
+</html>
